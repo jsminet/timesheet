@@ -19,7 +19,7 @@ development:
   database: timesheet_development
   pool:     5
   username: timesheet
-  password:
+  password: timesheet
   template: template0
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -44,9 +44,9 @@ test:
   adapter:  postgresql
   host:     localhost
   encoding: unicode
-  database: timesheet_test
+  database: travis_ci_test
   pool:     5
-  username: timesheet
+  username: postgres
   password:
   template: template0
 
