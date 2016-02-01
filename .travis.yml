@@ -11,3 +11,16 @@ before_script:
   - bundle exec rake db:create db:migrate
 addons:
   postgresql: "9.4"
+
+# whitelist
+branches:
+  only:
+    - master
+notifications:
+  email: false
+
+deploy:
+  provider: heroku
+  api_key: 5e33963b-7c2b-4d9e-abd4-885b4e13009f
+  on:
+    branch: master
