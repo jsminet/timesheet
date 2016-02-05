@@ -2,48 +2,29 @@
     <h2><span class="label label-default"> New</span> Timesheet-manager <small>on rails</small></h2>
     <br>
     <p>Bienvenue sur le gestionnaire de timesheet, inscrivez-vous pour pouvoir commencer !</p>
+    <% unless user_signed_in? %>
+        <%= link_to 'Sign up', new_user_registration_path, :class=> 'btn btn-success navbar-btn' %>
+    <% end %>
+    
 </div>
 
-<div class="row">
-  <div class="col-md-12"><h3>Liste des technologies utilisées</h3></div>
+<!--
+<div class="panel panel-default">
+  <div class="panel-body">
+    <p></p>
+  </div>
 </div>
-
-<div class="row">
-  <div class="col-md-2"><p class="text-right"><a href="https://github.com/jsminet/timesheet-manager">GitHub</a></p></div>
-  <div class="col-md-10"><p>Repository sur lequel l'application est commitée, n'hésitez pas à faire des pull requests</p></div>
-</div>
-
-<div class="row">
-  <div class="col-md-2"><p class="text-right"><a href="https://travis-ci.org/jsminet/timesheet-manager">Travis CI </a></p> </div>
-  <div class="col-md-10"><p>Système d'intégration continue, gère les build en temps réel et lance les déploiements</p> </div>
-</div>
-        
-<div class="row">
-  <div class="col-md-2"><p class="text-right"><a href="https://id.heroku.com/login">Heroku </a></p> </div>
-  <div class="col-md-10"><p>Système d'hébergement sur le cloud, déployé automatiquement par Travis CI après un build réussi</p></div>
-</div>
-
-<div class="row">
-  <div class="col-md-2"><p class="text-right"><a href="http://rubyonrails.org/">Ruby on rails </a></p> </div>
-  <div class="col-md-10"><p>Utilisation de rails 4.2.5 et de ruby 2.2.1p85</p></div>
-</div>
-
-<div class="row">
-  <div class="col-md-2"><p class="text-right"><a href="https://github.com/plataformatec/devise">Gem devise </a></p> </div>
-  <div class="col-md-10"><p>Système d'authentification utilisateurs</p></div>
-</div>
-
-<div class="row">
-  <div class="col-md-2"><p class="text-right"><a href="http://getbootstrap.com/">BootStrap </a></p> </div>
-  <div class="col-md-10"><p>Framework Javascript et CSS</p></div>
-</div>
+-->
 
 <footer>
     <div class="row">
-        <div class="col-lg-2">
+        <div class="col-xs-2">
             <img src="https://travis-ci.org/jsminet/timesheet-manager.svg?branch=master" class="img-rounded pull-lg-left">
         </div>
-        <div class="col-lg-10">
+        <div class="col-xs-5">
+             <p class="text-left"><%= User.count %> utilisateur(s) actuellement enregistré(s)</p>
+        </div>
+        <div class="col-xs-5">
              <p class="text-right">Copyright &copy; AkaBI 2016</p>
         </div>
     </div>
