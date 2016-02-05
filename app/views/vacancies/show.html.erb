@@ -1,0 +1,22 @@
+<div class ="page-header">
+  <%= link_to 'Edit', edit_vacancy_path(@vacancy), :class=> 'btn btn-warning pull-right' %>
+  <%= link_to 'Back', vacancies_path, :class=> 'btn btn-default pull-right' %>
+  <h3> <%= @vacancy.name %></h3>
+</div>
+
+  <!-- Table -->
+  <table class="table table-striped table-responsive">
+    
+  <thead>
+    <tr>
+      <th>Code</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @vacancy.code %></td>
+      </tr>
+  </tbody>
+
+  </table>

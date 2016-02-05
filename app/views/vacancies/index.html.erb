@@ -1,0 +1,34 @@
+<div class ="page-header">
+  <%= link_to 'New Vacancy', new_vacancy_path, :class=> 'btn btn-success pull-right'%>
+    <h3> Listing Vacancies</h3>
+</div>
+
+<table class="table table-striped table-responsive">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Code</th>
+      <th ></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vacancies.each do |vacancy| %>
+      <tr>
+        <td><%= vacancy.name %></td>
+        <td><%= vacancy.code %></td>
+        <td>    
+          <div class="btn-group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Action <span class="caret"></span> </button>
+              <ul class="dropdown-menu">
+                <li><%= link_to 'Show', vacancy %></li>
+                <li><%= link_to 'Edit', edit_vacancy_path(vacancy) %></li>
+                <li><%= link_to 'Delete', vacancy, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+              </ul>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
