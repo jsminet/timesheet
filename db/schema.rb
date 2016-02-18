@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160205202136) do
+ActiveRecord::Schema.define(version: 20160218102606) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,21 @@ ActiveRecord::Schema.define(version: 20160205202136) do
 
   add_index "customers", ["country_id"], name: "index_customers_on_country_id", using: :btree
   add_index "customers", ["full_code"], name: "index_customers_on_full_code", unique: true, using: :btree
+
+  create_table "events", force: :cascade do |t|
+    t.string   "name",        limit: 50
+    t.text     "description"
+    t.datetime "start"
+    t.datetime "finish"
+    t.integer  "customer_id"
+    t.integer  "user_id"
+    t.boolean  "all_day"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "events", ["customer_id"], name: "index_events_on_customer_id", using: :btree
+  add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
@@ -70,4 +85,6 @@ ActiveRecord::Schema.define(version: 20160205202136) do
   add_index "vacancies", ["name"], name: "index_vacancies_on_name", unique: true, using: :btree
 
   add_foreign_key "customers", "countries"
+  add_foreign_key "events", "customers"
+  add_foreign_key "events", "users"
 end

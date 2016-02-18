@@ -46,8 +46,8 @@ test:
   encoding: unicode
   database: travis_ci_test
   pool:     5
-  username: postgres
-  password:
+  username: timesheet_test
+  password: timesheet_test
   template: template0
 
 production:
