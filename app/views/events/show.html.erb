@@ -1,0 +1,34 @@
+<div class ="page-header">
+  <%= link_to 'Edit', edit_event_path(@event), :class=> 'btn btn-warning pull-right' %>
+  <%= link_to 'Back', events_path, :class=> 'btn btn-default pull-right' %>
+  <h3> <%= @event.name %></h3>
+</div>
+
+  <!-- Table -->
+  <table class="table table-striped table-responsive">
+    
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Start</th>
+      <th>Finish</th>
+      <th>Customer</th>
+      <th>User</th>
+      <th>All day</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @event.name %></td>
+        <td><%= @event.description %></td>
+        <td><%= @event.start %></td>
+        <td><%= @event.finish %></td>
+        <td><%= @event.customer.name %></td>
+        <td><%= @event.user.name %></td>
+        <td><%= @event.all_day %></td>
+      </tr>
+  </tbody>
+
+  </table>
