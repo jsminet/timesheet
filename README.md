@@ -2,6 +2,8 @@ Timesheet Manager
 ========================
 [![Build Status](https://travis-ci.org/jsminet/timesheet-manager.svg?branch=master)](https://travis-ci.org/jsminet/timesheet-manager)
 
+![Timesheet view](https://cloud.githubusercontent.com/assets/8916453/15301311/6b3bc664-1bad-11e6-9a80-200d982d70bf.PNG)
+
 Ruby on Rails
 -------------
 
@@ -26,21 +28,19 @@ Documentation and Support
 
 To create a postgres user:
 
-$ sudo -u postgres createuser -s USERNAME
-$ sudo -u postgres psql (in order to change password)
-$ postgres$ \password USERNAME
+- $ sudo -u postgres createuser -s USERNAME
+- $ sudo -u postgres psql (in order to change password)
+- $ postgres$ \password USERNAME
 
 TODO list
 ---------
 
 - Manage timesheet by user id
 - [Add Date Picker](https://github.com/eternicode/bootstrap-datepicker)
-- Add polymorphic link between user,vacancy and timesheet
+- Add polymorphic link between user+vacancy and timesheet
 - Manage minimum time unit (half day)
-- Create reporting for both internal and customer timesheet
-
-Similar Projects
-----------------
+- Create (pdf?) reporting for both internal and customer timesheet
+- [Add paginate](https://github.com/mislav/will_paginate)
 
 Credits
 -------
